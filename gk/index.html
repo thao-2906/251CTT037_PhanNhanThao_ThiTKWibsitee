@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ thống Quản lý Nghiên cứu Khoa học Sinh viên</title>
+  <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <header class="app-header">
+        <div class="brand">
+            <img src="images/logo.png" alt="Logo Hệ thống" class="app-logo">
+            <h1>SRMS - Sci-Research 2026</h1>
+        </div>
+        <nav class="header-nav">
+            <ul class="header-menu">
+                <li><a href="#home" class="active">Trang chủ</a></li>
+                <li><a href="#about">Giới thiệu</a></li>
+                <li><a href="#news">Tin tức</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+        </nav>
+        <div class="account-box">
+            <img src="images/user-avatar.png" alt="Sinh viên" class="user-photo">
+            <div class="account-details">
+                <span class="name">Phan Nhân Thảo</span>
+                <span class="id-number">MSSV: 251CTT037</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <nav class="navigation-bar">
+            <ul class="nav-links">
+                <li class="nav-item active" onclick="navigateMenu(this, 'Bảng điều khiển')">📊 Bảng điều khiển</li>
+                <li class="nav-item" onclick="navigateMenu(this, 'Đề tài của tôi')">📁 Đề tài của tôi</li>
+                <li class="nav-item" onclick="navigateMenu(this, 'Quỹ nghiên cứu')">💰 Quỹ nghiên cứu</li>
+                <li class="nav-item" onclick="navigateMenu(this, 'Hội đồng khoa học')">👥 Hội đồng thẩm định</li>
+            </ul>
+            
+            <div class="current-state">
+                <h5>Phân hệ đang chạy</h5>
+                <p>Đang xem: <strong id="selected-tab">Bảng điều khiển</strong></p>
+            </div>
+        </nav>
+
+        <main class="content-body">
+            <section class="info-banner">
+                <h2>Xin chào Nhà nghiên cứu trẻ! 🚀</h2>
+                <p>Hệ thống hỗ trợ theo dõi tiến độ, nộp thuyết minh đề tài và cập nhật kinh phí nghiên cứu năm học 2026.</p>
+            </section>
+
+            <section class="section-heading">
+                <h3>Danh mục Đề tài Nghiên cứu Nổi bật</h3>
+            </section>
+
+            <div class="grid-layout" id="research-grid">
+                
+                <article class="project-card">
+                    <img src="images/project1.jpg" alt="AI và Y tế" class="project-thumb">
+                    <div class="project-info">
+                        <h4>Ứng dụng AI chẩn đoán bệnh</h4>
+                        <p class="project-summary">Xây dựng mô hình học sâu hỗ trợ bác sĩ phân tích hình ảnh X-quang chuẩn xác.</p>
+                        <p class="project-status">Kinh phí cấp: <span class="highlight">15.000.000đ</span></p>
+                        <button class="action-btn" onclick="displayProject('Ứng dụng AI chẩn đoán bệnh', '15.000.000đ')">Xem chi tiết</button>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img src="images/project2.jpg" alt="Năng lượng xanh" class="project-thumb">
+                    <div class="project-info">
+                        <h4>Hệ thống Pin Năng lượng Mặt trời</h4>
+                        <p class="project-summary">Tối ưu hóa hiệu suất hấp thụ bức xạ nhiệt bằng thuật toán theo dõi điểm công suất tối đa.</p>
+                        <p class="project-status">Tiến độ hoàn thành: <span class="highlight">75%</span></p>
+                        <button class="action-btn" onclick="displayProject('Hệ thống Pin Năng lượng Mặt trời', '75%')">Xem chi tiết</button>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img src="images/project3.jpg" alt="Iot Nông nghiệp" class="project-thumb">
+                    <div class="project-info">
+                        <h4>IoT trong Nông nghiệp thông minh</h4>
+                        <p class="project-summary">Giám sát tự động độ ẩm đất, nhiệt độ không khí và tự động hóa hệ thống tưới tiêu qua di động.</p>
+                        <p class="project-status">Tiến độ hoàn thành: <span class="highlight">40%</span></p>
+                        <button class="action-btn" onclick="displayProject('IoT trong Nông nghiệp thông minh', '40%')">Xem chi tiết</button>
+                    </div>
+                </article>
+
+            </div>
+
+            <section class="interactive-panel">
+                <div class="panel-box border-blue" id="detail-panel">
+                    <h4>🔍 ĐỀ TÀI ĐANG CHỌN XEM</h4>
+                    <p><strong>Tên đề tài:</strong> <span id="project-title">Chưa có dữ liệu</span></p>
+                    <p><strong>Thông số/Kinh phí:</strong> <span id="project-value">Chưa có dữ liệu</span></p>
+                </div>
+
+                <div class="panel-box border-orange">
+                    <h4>🔑 Khóa Thẩm Định Tự Động</h4>
+                    <p>Mã phiên làm việc: <span class="session-token" id="session-code">00</span></p>
+                    <small>(Hệ thống tự động cộng 3 số cuối của MSSV)</small>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="app-footer">
+        <p>Sinh viên thực hiện: Phan Nhân Thảo | Mã số sinh viên: 251CTT037</p>
+        <div class="footer-item">
+        <span class="icon">✉️</span>
+        <span>Email: <a href="mailto:251CTT037_thao@pyu.edu.vn">251CTT037_thao@pyu.edu.vn</a></span>
+    </div>
+    <div class="footer-item">
+        <span class="icon">📞</span>
+        <span>Hotline: <a href="tel:0364291758">0364291758</a></span>
+    </div>
+        <p>Hệ thống ghi nhận thời gian vào lúc: <span id="clock">Đang đồng bộ...</span></p>
+    </footer>
+
+   <script src="script.js"></script>
+</body>
+</html>
