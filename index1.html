@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEARNHUB</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo-area">
+            <h1>LearnHub</h1>
+            <p>Nền tảng học tập trực tuyến</p>
+        </div>
+        <div class="student-info">
+            <span class="student-name">Phan Nhân Thảo</span>
+            <span class="student-id">MSSV: 251CTT037</span>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="#" class="side-item active">Dashboard</a></li>
+                <li><a href="#" class="side-item">Môn học</a></li>
+                <li><a href="#" class="side-item">Bài tập</a></li>
+                <li><a href="#" class="side-item">Kết quả học tập</a></li>
+                <li><a href="#" class="side-item">Tài khoản</a></li>
+            </ul>
+        </aside>
+
+        <div class="content-wrapper">
+            
+            <div class="left-content">
+                <section class="banner">
+                    <h3>Xin chào, Phan Nhân Thảo!</h3>
+                    <p>Hôm nay là ngày học tập tuyệt vời</p>
+                </section>
+
+                <section class="activity-section">
+                    <h3 class="section-title">Danh sách môn học</h3>
+                    
+                    <div class="courses-grid" id="coursesGrid">
+                        
+                        <article class="card">
+                            <div class="card-img">
+                                <img src="images/images.jpg" alt="HTML/CSS">
+                            </div>
+                            <h4 class="card-title">HTML/CSS</h4>
+                            <p class="progress-text">Tiến độ: 90%</p>
+                            <button class="btn" data-name="HTML/CSS" data-progress="90%">Xem</button>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-img">
+                                <img src="images/javascript-2.jpeg" alt="JAVA">
+                            </div>
+                            <h4 class="card-title">JAVA</h4>
+                            <p class="progress-text">Tiến độ: 80%</p>
+                            <button class="btn" data-name="JAVA" data-progress="80%">Xem</button>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-img">
+                                <img src="images/php-la-gi-1630265268116752752599.webp" alt="PHP">
+                            </div>
+                            <h4 class="card-title">PHP</h4>
+                            <p class="progress-text">Tiến độ: 75%</p>
+                            <button class="btn" data-name="PHP" data-progress="75%">Xem</button>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-img">
+                                <img src="images/mysql-1-1600340047538868003500-crop-160034079526453914971.webp" alt="MySQL">
+                            </div>
+                            <h4 class="card-title">MySQL</h4>
+                            <p class="progress-text">Tiến độ: 85%</p>
+                            <button class="btn" data-name="MySQL" data-progress="85%">Xem</button>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-img">
+                                <img src="images/file-1723784092933_1723784157953.jpg" alt="Laravel">
+                            </div>
+                            <h4 class="card-title">Laravel</h4>
+                            <p class="progress-text">Tiến độ: 60%</p>
+                            <button class="btn" data-name="Laravel" data-progress="60%">Xem</button>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-img">
+                                <img src="images/ai-la-gi-cong-dung-cua-ai.jpg" alt="AI cơ bản">
+                            </div>
+                            <h4 class="card-title">AI cơ bản</h4>
+                            <p class="progress-text">Tiến độ: 70%</p>
+                            <button class="btn" data-name="AI cơ bản" data-progress="70%">Xem</button>
+                        </article>
+
+                    </div>
+                </section>
+
+                <section class="statistics-section">
+                    <div class="stat-box">
+                        <p>Số môn học</p>
+                        <h4>6 Môn</h4>
+                    </div>
+                    <div class="stat-box">
+                        <p>Số bài tập</p>
+                        <h4>24 Bài</h4>
+                    </div>
+                    <div class="stat-box">
+                        <p>Điểm trung bình</p>
+                        <h4>8.2 /10</h4>
+                    </div>
+                    <div class="stat-box">
+                        <p>Tín chỉ tích lũy</p>
+                        <h4>18 Tín chỉ</h4>
+                    </div>
+                </section>
+            </div>
+
+            <div class="right-sidebar">
+                <div class="selected-box">
+                    <h3>MÔN HỌC ĐANG CHỌN</h3>
+                    <p>Tên môn học: <span id="selectedName">Chưa chọn</span></p>
+                    <p>Tiến độ: <span id="selectedProgress">--</span></p>
+                </div>
+
+                <div class="notify-box">
+                    <h3>Thông báo</h3>
+                    <p>• Bài tập tuần 5 đã cập nhật.</p>
+                    <p>• Hạn nộp bài PHP: 30/05/2026.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>MSSV: 251CTT037</p>
+        <p>Họ tên: Phan Nhân Thảo</p>
+        <p>Ngày thi: 23/05/2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
